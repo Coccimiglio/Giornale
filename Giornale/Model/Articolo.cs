@@ -38,9 +38,9 @@ public class Articolo
         string commenti = "";
         foreach (var item in this.Commenti)
         {
-            commenti += $"{item}\n \n";
+            commenti += $"'{item}';\n";
         }
-        return $"Autore : {this.Nome} \n Titolo : {this.Titolo} \n \n Commenti : {commenti}";
+        return $"Autore : {this.Nome};\nTitolo : {this.Titolo};\n \nCommenti : [\n{commenti}]";
     }
 
     public static bool operator ==(Articolo a, Articolo b)

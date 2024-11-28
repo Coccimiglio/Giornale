@@ -58,7 +58,7 @@ public class Giornale
         string articoli = "";
         foreach (var item in Articoli)
         {
-            articoli += $"{item}\n \n \n";
+            articoli += $"--ARTICOLO {Articoli.IndexOf(item)+1}--\n{item}\n \n \n";
         }
         return articoli;
     }
