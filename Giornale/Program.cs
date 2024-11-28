@@ -12,7 +12,7 @@ public class Program
         commenti1.Add(new Commento("non ci voleva"));
         commenti1.Add(new CommentoDellaRedazione("affluenza record alle urne"));
         giornale.AggiungiArticolo(new Articolo("Osvaldo","Trump Ha Vinto",commenti1));
-        
+        giornale.AggiungiArticolo(new Articolo("Osvaldo","Trump Ha Vinto",commenti1));
         
         
         List<Commento> commenti2 = new List<Commento>();

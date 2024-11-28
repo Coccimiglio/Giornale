@@ -54,7 +54,7 @@ public class Articolo
 
     public static bool operator !=(Articolo a, Articolo b)
     {
-        if (!(a == b))
+        if (!(a.Nome == b.Nome && a.Titolo == b.Titolo))
         {
             return true;
         }
