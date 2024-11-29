@@ -35,7 +35,7 @@ public class Immagine : Post
 
     public static bool operator ==(Immagine a, Immagine b)
     {
-        if (a.Nome == b.Nome && a.Titolo == b.Titolo)
+        if (a == b && a.LinkImmagine == b.LinkImmagine)
         {
             return true;
         }
@@ -44,7 +44,7 @@ public class Immagine : Post
 
     public static bool operator !=(Immagine a, Immagine b)
     {
-        if (!(a.Nome == b.Nome && a.Titolo == b.Titolo))
+        if (!(a == b && a.LinkImmagine == b.LinkImmagine))
         {
             return true;
         }

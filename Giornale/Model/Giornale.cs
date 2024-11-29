@@ -2,24 +2,24 @@
 
 public class Giornale
 {
-    private List<Articolo> Articoli = new List<Articolo>();
+    private List<Post> Articoli = new List<Post>();
 
     public Giornale()
     {
 
     }
 
-    public Giornale(List<Articolo> articoli)
+    public Giornale(List<Post> articoli)
     {
         this.Articoli = articoli;
     }
 
-    public void AggiungiArticolo(Articolo articolo)
+    public void AggiungiArticolo(Post articolo)
     {
         this.Articoli.Add(articolo);
     }
 
-    public void AggiungiArticoli(List<Articolo> articoli)
+    public void AggiungiArticoli(List<Post> articoli)
     {
         foreach (var item in articoli)
         {
@@ -30,7 +30,7 @@ public class Giornale
         }
     }
 
-    public int TrovaArticolo(Articolo articolo)
+    public int TrovaArticolo(Post articolo)
     {
         foreach (var item in Articoli)
         {
