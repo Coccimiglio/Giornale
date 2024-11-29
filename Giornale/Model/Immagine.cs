@@ -30,7 +30,7 @@ public class Immagine : Post
         {
             commenti += $"'{item}';\n";
         }
-        return $"Autore : {this.Nome};\nTitolo : {this.Titolo};\n \nContenuto:\n[{LinkImmagine}]\n \nCommenti : [\n{commenti}]";
+        return $"Autore : {this.Nome};\nTitolo : {this.Titolo};\n \nImmagine:\n[{LinkImmagine}]\n \nCommenti : [\n{commenti}]";
     }
 
     public static bool operator ==(Immagine a, Immagine b)
