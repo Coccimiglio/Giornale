@@ -1,46 +1,36 @@
 ﻿namespace Giornale.Model;
 
-public class Articolo
+public class Articolo : Post
 {
-    public string Nome { get; set; }
-    public string Titolo { get; set; }
-    private List<Commento> Commenti= new List<Commento>();
+    private string Testo { get; set; }
     public Articolo()
     {
         
     }
 
-    public Articolo(string nome, string titolo, List<Commento> commenti)
+    public Articolo(string nome, string titolo, List<Commento> commenti,string testo) : base(nome, titolo, commenti)
     {
-        this.Nome = nome;
-        this.Titolo = titolo;
-        this.Commenti = commenti;
+        this.Testo = testo;
     }
 
     public void AggiungiCommento(Commento commento)
     {
-        this.Commenti.Add(commento);
+        base.AggiungiCommento(commento);
     }
     
     public void AggiungiCommenti(List<Commento> commenti)
     {
-        foreach (var item in this.Commenti)
-        {
-            if (!Commenti.Contains(item))
-            {
-                this.Commenti.Add(item);
-            }
-        }
+        base.AggiungiCommenti(commenti);
     }
 
     public override string ToString()
     {
         string commenti = "";
-        foreach (var item in this.Commenti)
+        foreach (var item in base.getCommenti())
         {
             commenti += $"'{item}';\n";
         }
-        return $"Autore : {this.Nome};\nTitolo : {this.Titolo};\n \nCommenti : [\n{commenti}]";
+        return $"Autore : {this.Nome};\nTitolo : {this.Titolo};\n \nContenuto:\n[{Testo}]\n \nCommenti : [\n{commenti}]";
     }
 
     public static bool operator ==(Articolo a, Articolo b)
