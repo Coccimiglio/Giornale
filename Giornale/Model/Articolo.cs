@@ -35,11 +35,16 @@ public class Articolo : Post
 
     public static bool operator ==(Articolo a, Articolo b)
     {
-        if (a.Nome == b.Nome && a.Titolo == b.Titolo)
+        if (a == b && a.Testo == b.Testo)
         {
             return true;
         }
         return false;
+        /*if (a.Nome == b.Nome && a.Titolo == b.Titolo)
+        {
+            return true;
+        }
+        return false;*/
     }
 
     public static bool operator !=(Articolo a, Articolo b)
