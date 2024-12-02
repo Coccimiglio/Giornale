@@ -1,6 +1,6 @@
 namespace Giornale.Model;
 
-public class Post
+public class Post : IEquatable<Post>
 {
     public string Nome { get; set; }
     public string Titolo { get; set; }
@@ -64,5 +64,25 @@ public class Post
     public List<Commento> getCommenti()
     {
         return this.Commenti;
+    }
+
+    public bool Equals(Post? other)
+    {
+        if (other is null) return false;
+        if (ReferenceEquals(this, other)) return true;
+        return Commenti.Equals(other.Commenti) && Nome == other.Nome && Titolo == other.Titolo;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is null) return false;
+        if (ReferenceEquals(this, obj)) return true;
+        if (obj.GetType() != GetType()) return false;
+        return Equals((Post)obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Commenti, Nome, Titolo);
     }
 }
